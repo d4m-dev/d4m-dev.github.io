@@ -1,9 +1,11 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-
-const repoName = process.env.VITE_REPO_NAME || "d4m-dev.github.io";
+import { defineConfig } from "vite"
+import react from "@vitejs/plugin-react"
 
 export default defineConfig({
   plugins: [react()],
-  base: `/${repoName}/`
-});
+  // GitHub Pages của repo luôn là /<repo>/
+  base: "/instagram-mvp/",
+  build: {
+    manifest: "manifest.json",
+  },
+})
